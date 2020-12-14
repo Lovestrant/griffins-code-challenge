@@ -61,7 +61,7 @@ class sale {
 
 
 
-
+var itemnumber = document.getElementById('itemsnumber').value;
 var productname = document.getElementById('itemname').value;
 var productid = document.getElementById('itemid').value;
 var productprice = document.getElementById('itemprice').value;
@@ -72,36 +72,58 @@ var discountamount;
 
 //if discount determinant statements
 
-if (salesnumber>10 && salesnumber<26) {
-	discountamount == 0.1;
-}else if( salesnumber>25 && salesnumber<51){
-	discountamount == 0.25;
-}else if (salesnumber>50) {
-	discountamount == 0.5;
-}else {
-	discountamount == 0;
+for(i=0; i<itemnumber; i++){
+
+	if (salesnumber>10 && salesnumber<26) {
+		discountamount =0.1;
+	}else if( salesnumber>25 && salesnumber<51){
+		discountamount = 0.25;
+	}else if (salesnumber>50) {
+		discountamount = 0.5;
+	}else {
+		discountamount = 0;
+	}
+	
+	
+	//objects 
+	//productname = new product(productname.value);
+	//customername = new customer(customername);
+	//saleid = new sale(saleid);
+	
+	
+	//logic calculations
+	
+	var grandtotal = salesnumber * productprice ;
+	
+	var totaldiscounts = discountamount * salesnumber;
+	var totalafterdiscount = grandtotal - totaldiscounts;
+
+
+	//creating the display elements
+	var createme = document.getElementById('div');
+	createmenow = document.createElement('p');
+	createme.appendChild(createmenow);
+	
+		//variable initiation and retreval from the user ui
+
+
+	createme.innerHTML ="item: "+ productname + " The grandtotal =" + grandtotal + " " 
+		+ "Total discounts ="+ " " + totaldiscounts + " Total after discount="+" " + totalafterdiscount;
+	
+		//clearing the input fields
+
+		
+		itemname.value = "";
+		itemid.value = "";
+		itemprice.value = "";
+		customername.value = "";
+		salesnumber.value = "";
+		saleid.value = "";
 }
 
 
-//objects 
-productname = new product(productname);
-customername = new customer(customername);
-saleid = new sale(saleid);
 
 
-//logic calculations
-
-var grandtotal = salesnumber * productprice ;
-var totalafterdiscount = grandtotal - (discountamount * salesnumber);
-var totaldiscounts = discountamount * salesnumber;
-
-	
-document.getElementById('div').innerHTML = " The grandtotal =" + grandtotal + " " 
-	+ "Total discounts ="+ " " + totaldiscounts + " Total after discount="+" " + totalafterdiscount;
-
-	//variable initiation and retreval from the user ui
-
-document.getElementById('div').innerHTML = pdetails.name;
 
 
 
