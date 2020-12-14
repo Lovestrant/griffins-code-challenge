@@ -107,8 +107,7 @@ for(i=0; i<itemnumber; i++){
 		//variable initiation and retreval from the user ui
 
 
-	createme.innerHTML ="item: "+ productname + " The grandtotal =" + grandtotal + " " 
-		+ "Total discounts ="+ " " + totaldiscounts + " Total after discount="+" " + totalafterdiscount;
+	createme.innerHTML =`item: ${productname} buyer ${customername}The grandtotal =${grandtotal} Total discounts = ${totaldiscounts} Total after discount= ${totalafterdiscount}`;
 	
 		//clearing the input fields
 
