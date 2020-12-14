@@ -1,0 +1,11 @@
+.mainclass {
+position: absolute;
+left: 30%; 
+top: 5%;
+background-color: darkslategrey;
+}
+
+.styleme{
+    width: 500px;
+    height: 50px;
+}
